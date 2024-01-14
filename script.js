@@ -9,6 +9,9 @@ let recordFlag = false;
 let recorder; 
 let chunks = []; //media data in chunks
 
+let transparentColor= "transparent";
+let filterColor = "";
+
 let constraints={
     video: true,
     audio: true
@@ -58,13 +61,28 @@ recordBtnCont.addEventListener("click", (e) => {
 
 })
 
+
 captureBtnCont.addEventListener("click",(e) =>{
+    
+
     let canvas = document.createElement("canvas");
-    canvas.width = video.videoWidth;
+    canvas.width = video.videoWidth; 
     canvas.height = video.videoHeight;
 
      let tool = canvas.getContext("2d");
-     tool.drawImage(video,0,0,canvas.width,canvas.height);
+    
+
+
+     tool.filter = filterColor;
+
+    //drawing filtered video frame on the canvas
+    tool.drawImage(video,0,0,canvas.width,canvas.height);
+
+    tool.filter="none";
+
+     //filtertering
+     tool.fillStyle = transparentColor;
+     tool.fillRect(0,0,canvas.width, canvas.height);
 
      let imageURL = canvas.toDataURL();
      let a = document.createElement("a");
@@ -74,6 +92,7 @@ captureBtnCont.addEventListener("click",(e) =>{
     
 })
 
+//start timer
 let timerID;
 let counter = 0;//reps total seconds
 let timer = document.querySelector(".timer");
@@ -101,11 +120,35 @@ function startTimer(){
     timerID = setInterval(displayTimer, 1000);
 }
 
+//stop-timer
 function stopTimer(){
     clearInterval(timerID);
     timer.display="none";
     timer.innerText = "00:00:00"
 }
 
+//bg-color filtering
+let filterLayer = document.querySelector(".filter-layer");
+let allFilters = document.querySelectorAll(".filter");
 
+allFilters.forEach((filterElem) => {
+    filterElem.addEventListener("click", (e) =>{
+        //get style
+        transparentColor= getComputedStyle(filterElem).getPropertyValue("background-color");
+          
+        //set
+        filterLayer.style.backgroundColor = transparentColor;
+    })
+})
+
+//filters
+allFilters.forEach((filterElem) => {
+    filterElem.addEventListener("click", (e) => {
+        // Get style
+        filterColor = getComputedStyle(filterElem).getPropertyValue("filter");
+
+        // Set filter to the video stream
+        video.style.filter = filterColor;
+    })
+})
 

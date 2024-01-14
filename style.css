@@ -36,6 +36,7 @@ video{
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 5;
 }
 .record-btn{
     background-color: red;
@@ -88,6 +89,52 @@ video{
 }
 .timer{
     display: none;
+}
+
+.filter-cont{
+    position: absolute;
+    top: calc((100vh - 16rem)/2);
+    left:5rem;
+    height: 16rem;
+    width: 5rem;
+    background-color: aqua;
+    z-index: 5;
+}
+
+.filter{
+    height: 4rem;
+    background-image: url(https://picsum.photos/id/133/200/300);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    /* background-color: #ffecb3a6; */
+    background-blend-mode:color-burn;   
+}
+.purple{
+    background-color: #be43d261;
+}
+.aqua{
+    background-color: #33cac16b;
+}
+.contrast{
+    /* background-color: hsla(33, 52%, 61%, 0.482); */
+    filter: contrast(200%);
+}
+.black-white{
+    filter: grayscale(100%);
+}
+.transparent{
+    background-color: transparent;
+}
+
+.filter-layer{
+    position: absolute; 
+    top:0;
+    left:0;
+    height: 100vh;
+    width: 100vw;
+    /* background-color: #be43d261; */
+    z-index: 1;
 }
 
 
