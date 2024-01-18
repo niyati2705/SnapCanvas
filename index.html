@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
     <title>Camera_Album</title>
 </head>
 <body>
@@ -26,16 +28,28 @@
     </div>
 
     <div class="filter-cont">
+        <div class="filter transparent"></div>
         <div class="filter contrast"></div>
         <div class="filter black-white"></div>
         <div class="filter purple"></div>
         <div class="filter aqua"></div>
-        <div class="filter transparent"></div>
     </div>
 
     <div class="filter-layer">
     </div>
 
-    <script src="script.js"></script>
+    <span class="material-icons gallery">
+        photo_library
+        </span>
+    <script src="https://unpkg.com/shortid-dist@1.0.5/dist/shortid-2.2.13.min.js"></script>
+    <script src="./db.js"></script>
+    <script src="./script.js"></script>
+    <script>
+        let gallery = document.querySelector(".gallery");
+        gallery.addEventListener("click" , (e) =>{
+
+            location.assign("./gallery.html");
+        })
+    </script>
 </body>
 </html>

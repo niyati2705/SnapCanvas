@@ -33,12 +33,21 @@ navigator.mediaDevices.getUserMedia(constraints)
     recorder.addEventListener("stop",(e) =>{
         //conversion of media chunks data to video and downloading
         let blob = new Blob(chunks, {type : "video/mp4"});
-        let videoURL = URL.createObjectURL(blob);
 
-        let a = document.createElement("a");
-        a.href=videoURL;
-        a.download = "stream.mp4";
-        a.click();
+        if(db){
+            //transaction
+            let videoID = shortid();
+            
+            let dbTransaction = db.transaction("video", "readwrite");
+            let videoStore = dbTransaction.objectStore("video");
+
+            let videoEntry ={
+                id: `vid-${videoID}`, //same as keypatha name
+                blobData : blob
+            }
+            videoStore.add(videoEntry);
+           
+        }
 
     })
 })
@@ -64,14 +73,13 @@ recordBtnCont.addEventListener("click", (e) => {
 
 captureBtnCont.addEventListener("click",(e) =>{
     
+    captureBtn.classList.add("scale-capture");
 
     let canvas = document.createElement("canvas");
     canvas.width = video.videoWidth; 
     canvas.height = video.videoHeight;
 
      let tool = canvas.getContext("2d");
-    
-
 
      tool.filter = filterColor;
 
@@ -85,10 +93,25 @@ captureBtnCont.addEventListener("click",(e) =>{
      tool.fillRect(0,0,canvas.width, canvas.height);
 
      let imageURL = canvas.toDataURL();
-     let a = document.createElement("a");
-     a.href = imageURL;
-     a.download = "image.jpg";
-     a.click();
+
+     if(db){
+        //transaction
+        let imageID = shortid();
+        
+        let dbTransaction = db.transaction("image", "readwrite");
+        let imageStore = dbTransaction.objectStore("image");
+
+        let imageEntry ={
+            id: `img-${imageID}`, //same as keypath name
+            url: imageURL
+        }
+        imageStore.add(imageEntry);
+       
+    }
+    setTimeout(() => {
+        captureBtn.classList.remove("scale-capture");
+    },500)
+    
     
 })
 
@@ -136,7 +159,7 @@ allFilters.forEach((filterElem) => {
         //get style
         transparentColor= getComputedStyle(filterElem).getPropertyValue("background-color");
           
-        //set
+        //set style
         filterLayer.style.backgroundColor = transparentColor;
     })
 })
@@ -151,4 +174,3 @@ allFilters.forEach((filterElem) => {
         video.style.filter = filterColor;
     })
 })
-

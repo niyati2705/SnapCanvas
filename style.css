@@ -23,7 +23,7 @@ video{
     right: 5rem;
     color: white;
     display: flex;
-    flex-direction: column ;
+    flex-direction: column;
     justify-content: space-between ;
 }
 
@@ -82,8 +82,8 @@ video{
 
 .timer-cont{
     position: absolute;
-    bottom:10rem;
-    left:5rem;
+    bottom:5rem;
+    right:5rem;
     color: aqua;
     font-size: 0.8rem;
 }
@@ -91,11 +91,11 @@ video{
     display: none;
 }
 
-.filter-cont{
+.filter-cont{ 
     position: absolute;
-    top: calc((100vh - 16rem)/2);
+    bottom: calc((100vh - 16rem)/2);
     left:5rem;
-    height: 16rem;
+    height: 18rem;
     width: 5rem;
     background-color: aqua;
     z-index: 5;
@@ -111,14 +111,13 @@ video{
     background-blend-mode:color-burn;   
 }
 .purple{
-    background-color: #be43d261;
+    background-color: #d32fee24;
 }
 .aqua{
-    background-color: #33cac16b;
+    background-color: #2dc6bd33;
 }
 .contrast{
-    /* background-color: hsla(33, 52%, 61%, 0.482); */
-    filter: contrast(200%);
+    filter: contrast(150%) brightness(120%) sepia(20%);
 }
 .black-white{
     filter: grayscale(100%);
@@ -135,6 +134,18 @@ video{
     width: 100vw;
     /* background-color: #be43d261; */
     z-index: 1;
+} 
+.material-icons{
+    color: white;
+    font-size: 4rem;
+}
+.gallery {
+    position: absolute;
+    left: 5rem;
+    bottom: 4rem;
+    z-index: 2;
 }
 
-
+.gallery:hover{
+    cursor: pointer;
+}
