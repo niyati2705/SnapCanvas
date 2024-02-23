@@ -3,9 +3,13 @@ SnapCanvas is an interactive web application that allows users to capture images
 
 # Features
 Image Capture: Users can click images using their device's camera.
+
 Video Recording: Users can record videos using their device's camera.
+
 Image Filters: Users can apply various filters to images.
+
 Gallery View: Users can view their captured media in a gallery format.
+
 Download and Delete: Users can download or delete their media from the gallery.
 
 # Technologies Used
