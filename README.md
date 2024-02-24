@@ -22,10 +22,14 @@ Clone the repository: git clone https://github.com/niyati2705/snapcanvas.git
 Open index.html in your web browser.
 
 # Usage
-Click the "Capture Image" button to take a photo.
-Click the "Record Video" button to start recording a video.
-Click the "Apply Filter" button to apply a filter to the image.
-Click the "View Gallery" button to view your captured media.
+Click the White Recording button to take a photo.
+
+Click the Red Recording button button to start recording a video.
+
+Choose a filter from the available options to apply a filter to the image.
+
+Click the Gallery icon to view your captured media.
+
 In the gallery, you can download or delete your media.
 
 # License
