@@ -50,41 +50,40 @@ video{
     width: 3rem;
     border-radius: 50%;
 }
-.scale-record{
+.scale-record {
     animation-name: scale-record;
     animation-iteration-count: infinite;
     animation-duration: 1s;
-}
-
-.scale-capture{
+  }
+  
+  .scale-capture {
     animation-name: scale-capture;
     animation-iteration-count: 1;
     animation-duration: 1s;
-}
-
+  }
 @keyframes scale-record{
-    0%{
-        transform: scale(0.8);
-    }
-    100%{
-        transform: scale(1.1);
-    }
+    0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.2);
+      }
 }
 
 @keyframes scale-capture{
-    0%{
-        transform: scale(0.8);
-    }
-    100%{
-        transform: scale(1.1);
-    }
+    0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.2);
+      }
 }
 
 .timer-cont{
     position: absolute;
-    bottom:5rem;
+    bottom:0;
     right:5rem;
-    color: aqua;
+    color: white;
     font-size: 0.8rem;
 }
 .timer{
@@ -97,7 +96,7 @@ video{
     left:5rem;
     height: 18rem;
     width: 5rem;
-    background-color: aqua;
+    background-color: black;
     z-index: 5;
 }
 
@@ -145,7 +144,24 @@ video{
     bottom: 4rem;
     z-index: 2;
 }
-
+.upload{
+    color: white;
+    position: absolute;
+    right: 5rem;
+    bottom: 4rem;
+    z-index: 2;
+    cursor: pointer;
+    
+}
 .gallery:hover{
     cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .action-cont{
+    right:0;
+  }
+  .filter-cont{
+    left:0;
+  }
 }

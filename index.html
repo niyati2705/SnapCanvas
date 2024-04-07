@@ -19,7 +19,7 @@
         </div>
 
         <div class="capture-btn-cont">
-            <div class="capture-btn "></div>
+            <div class="capture-btn"></div>
         </div>
     </div>
 
@@ -41,14 +41,24 @@
     <span class="material-icons gallery">
         photo_library
         </span>
+    <span class="material-icons upload">
+            edit_square
+    </span>
     <script src="https://unpkg.com/shortid-dist@1.0.5/dist/shortid-2.2.13.min.js"></script>
     <script src="./db.js"></script>
     <script src="./script.js"></script>
     <script>
+        //gallery
         let gallery = document.querySelector(".gallery");
         gallery.addEventListener("click" , (e) =>{
 
             location.assign("./gallery.html");
+        })
+        //upload pictures for editing
+        let upload = document.querySelector(".upload");
+        upload.addEventListener("click" , (e) =>{
+
+            location.assign("./upload.html");
         })
     </script>
 </body>
