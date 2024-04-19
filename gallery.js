@@ -1,5 +1,7 @@
+let galleryCont = document.querySelector(".gallery-cont");
 setTimeout(() => {
-  if (db) {
+  if (db){
+
     //video retrieval
     let videoDBTransaction = db.transaction("video", "readonly");
     let videoStore = videoDBTransaction.objectStore("video");
@@ -7,7 +9,13 @@ setTimeout(() => {
     let videoRequest = videoStore.getAll(); //event driven
     videoRequest.onsuccess = (e) => {
       let videoResult = videoRequest.result;
-      let galleryCont = document.querySelector(".gallery-cont");
+      // let galleryCont = document.querySelector(".gallery-cont");
+
+      
+      if (videoResult.length === 0) {
+        showNoMediaMessage();
+        return;
+    }
 
       //console.log(videoResult);
       videoResult.forEach((videoObj) => {
@@ -48,6 +56,11 @@ setTimeout(() => {
       let imageResult = imageRequest.result;
       let galleryCont = document.querySelector(".gallery-cont");
 
+      if (imageResult.length === 0 && galleryCont.innerHTML === "") {
+        showNoMediaMessage();
+        return;
+    }
+
       imageResult.forEach((imageObj) => {
         let mediaElem = document.createElement("div");
         mediaElem.setAttribute("class", "media-cont");
@@ -79,6 +92,18 @@ setTimeout(() => {
     };
   }
 }, 100);
+
+    // Function to display "No captured media" message
+    function showNoMediaMessage() {
+      // galleryCont.innerHTML = "<p>No captured media</p>";
+      let messageContainer = document.querySelector(".no-media-message");
+      if (!messageContainer) {
+          messageContainer = document.createElement("div");
+          messageContainer.classList.add("no-media-message");
+          messageContainer.textContent = "No captured media";
+          galleryCont.appendChild(messageContainer);
+      }
+  }
 
 function downloadListener(e) {
   let id = e.target.parentNode.getAttribute("id");

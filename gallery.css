@@ -66,3 +66,9 @@ body{
     background-color: red; 
     margin: 0.5rem;
 } 
+
+.no-media-message {
+    color: white;
+    font-size: 2rem;
+    margin: 2rem;
+}
