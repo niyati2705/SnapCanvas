@@ -1,8 +1,8 @@
 # SnapCanvas
-SnapCanvas is an interactive web application that allows users to capture images, record videos, apply filters to images, and view and manage their media in a gallery format. The application is built using HTML, CSS, and JavaScript.
+SnapCanvas is an interactive web application that allows users to capture images, record videos, apply filters to images, and view and manage their media in a gallery format. The application is built using HTML, CSS, and JavaScript. 
 
 # Features
-Image Capture: Users can click images using their device's camera.
+<h3>Image Capture</h3> : Users can click images using their device's camera.
 
 Video Recording: Users can record videos using their device's camera.
 
