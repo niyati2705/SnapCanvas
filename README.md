@@ -8,7 +8,7 @@ Image Filters: Users can apply various filters to images.
 
 Gallery View: Users can view their captured media in a gallery format.
 
-Image Editing : Users can download or delete their media from the gallery.
+Image Editing : Users can upload and edit their pictures.
 
 # Technologies Used
 HTML
