@@ -33,16 +33,14 @@ Click the editing icon, to upload an image, edit it and download it.
 
 # Screenshots
 
+
 ![capture](https://github.com/niyati2705/SnapCanvas/assets/108968934/f6f936b0-6f13-443f-901f-5fb70faec148)
 
-![edit](https://github.com/niyati2705/SnapCanvas/assets/108968934/e124a3d9-33ae-4be7-9845-0c85d8746c2e)
 
 ![gallery](https://github.com/niyati2705/SnapCanvas/assets/108968934/d58ca7f6-4beb-4daa-91ce-688980edd321)
 
 
-
-
-
+![edit](https://github.com/niyati2705/SnapCanvas/assets/108968934/e124a3d9-33ae-4be7-9845-0c85d8746c2e)
 
 
 # License
