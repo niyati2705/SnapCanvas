@@ -1,4 +1,3 @@
-
 let video = document.querySelector("video");
 let recordBtnCont = document.querySelector(".record-btn-cont");
 let recordBtn = document.querySelector(".record-btn");
