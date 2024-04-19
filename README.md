@@ -1,5 +1,5 @@
 # SnapCanvas
-SnapCanvas is an interactive web application that allows users to capture images, record videos, apply filters to images, and view and manage their media in a gallery format. The application is built using HTML, CSS, and JavaScript.
+SnapCanvas is an interactive web application that allows users to capture images, record videos, apply filters to images, and view and manage their media in a gallery format. Additionally users can also upload their images to edit and further download them.
 
 # Link 
 <a href="https://niyati2705.github.io/SnapCanvas/" alt="Link">Click here to check it out!</a>
@@ -33,17 +33,17 @@ Click the editing icon, to upload an image, edit it and download it.
 
 # Screenshots
 
-Capture/record media-
+## Capture/record media -
 
 ![capture](https://github.com/niyati2705/SnapCanvas/assets/108968934/f6f936b0-6f13-443f-901f-5fb70faec148)
 
 
-Gallery format for captured medi-
+## Gallery format for captured media -
 
 ![gallery](https://github.com/niyati2705/SnapCanvas/assets/108968934/d58ca7f6-4beb-4daa-91ce-688980edd321)
 
 
-Image Editing Feature-
+## Image Editing Feature -
 
 ![edit](https://github.com/niyati2705/SnapCanvas/assets/108968934/e124a3d9-33ae-4be7-9845-0c85d8746c2e)
 
